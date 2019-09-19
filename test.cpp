@@ -52,6 +52,7 @@ limits int main(int argc, char const *argv[]) {
     printf("Error c-argument\n");
     return 0;
   }
+  
   int dec;
   double x1, x2;
 
