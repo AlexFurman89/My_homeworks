@@ -17,8 +17,7 @@ int dec_func(int a, int b, int c) {
     return 0;
   }
 }
-
-int main(int argc, char const *argv[]) {
+limits int main(int argc, char const *argv[]) {
 
   int MAX = std::numeric_limits<char>::max();
   int MIN = std::numeric_limits<char>::min();
