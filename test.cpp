@@ -2,71 +2,68 @@
 #include <iostream>
 #include <limits>
 #include <stdio.h>
-using namespace std;
 
-int dec_func(int a, int b, int c) {
+long long dec_func(int a, int b, int c) {
 
-  int dec = b * b - (4 * a * c);
+  long long dec = b * b - (4 * a * c);
 
-  printf("%d", dec);
+  std::cout << dec << std::endl;
+  ;
 
   if (dec >= 0) {
     return dec;
   } else {
-    printf("There is no solution because of negative descriminant");
+    std::cout << "There is no solution because of negative descriminant"
+              << std::endl;
     return 0;
   }
 }
-limits int main(int argc, char const *argv[]) {
+int main(int argc, char const *argv[]) {
 
   int MAX = std::numeric_limits<char>::max();
   int MIN = std::numeric_limits<char>::min();
   int a, b, c;
 
-  cout << "Please enter the a-argument from the range[" << MIN << " to " << MAX
-       << "]\n"
-       << endl;
-  cin >> a;
+  std::cout << "Please enter the a-argument from the range[" << MIN << " to "
+            << MAX << "]" << std::endl;
+  std::cin >> a;
 
   if (a < MIN || a > MAX) {
-    printf("Error a-argument\n");
+    std::cout << "Error a-argument" << std::endl;
     return 0;
   }
 
-  cout << "Please enter the b-argument from the range[" << MIN << " to " << MAX
-       << "]\n"
-       << endl;
-  cin >> b;
+  std::cout << "Please enter the b-argument from the range[" << MIN << " to "
+            << MAX << "]" << std::endl;
+  std::cin >> b;
 
   if (b < MIN || b > MAX) {
-    printf("Error b-argument\n");
+    std::cout << "Error b-argument" << std::endl;
     return 0;
   }
 
-  cout << "Please enter the c-argument from the range[" << MIN << " to " << MAX
-       << "]\n"
-       << endl;
-  cin >> c;
+  std::cout << "Please enter the c-argument from the range[" << MIN << " to "
+            << MAX << "]" << std::endl;
+  std::cin >> c;
 
   if (c < MIN || c > MAX) {
-    printf("Error c-argument\n");
+    std::cout << "Error c-argument" << std::endl;
     return 0;
   }
-  
-  int dec;
   double x1, x2;
 
-  dec = dec_func(a, b, c);
+  auto dec = dec_func(a, b, c);
 
   if (dec > 0) {
     x1 = (-b + sqrt(dec)) / (2 * a);
     x2 = (-b - sqrt(dec)) / (2 * a);
-    printf("The first solution x1 = %02.f\n", x1);
-    printf("The second solution x2 = %02.f\n", x2);
+    std::cout << "The first solution x1 =" << x1 << std::endl;
+    std::cout << "The second solution x2 =" << x2 << std::endl;
 
   } else if (dec == 0) {
-    x1 = -b / 2 * a;
-    printf("There is only one solution x =%02.f\n", x1);
+    double x1;
+    x1 = static_cast<double>(-b) / 2 * a;
+    std::cout << "There is only one solution x =" << x1 << std::endl;
   }
   return 0;
 }
