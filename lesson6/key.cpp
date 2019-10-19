@@ -12,7 +12,6 @@ int main() {
   std::cout << "Enter size of the table:" << std::endl;
   std::cin >> size_cod;
 
-
   int count = 0;
   for (size_t index = 0; string_before[index]; ++index)
     count += 1;
