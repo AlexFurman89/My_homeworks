@@ -10,7 +10,7 @@ int main() {
 	std::cin >> string;
 
 	for (size_t i=0; i<=T; ++i) {
-		if (string[i] >=97 && string[i] <=122) {
+		if (string[i] >=0 && string[i] <=9) {
 			string[i] -=32;
 		}
 	}
