@@ -1,15 +1,15 @@
 #include <cctype>
 #include <cstdio>
 #include <iostream>
-const int $A = 5;
+const unsigned  ArraySize = 5;
 
 int main() {
 
-  char string[$A];
+  char string[ArraySize];
 
   std::cin >> string;
 
-  for (int i = 0; string[i]; ++i) {
+  for (unsigned i = 0; string[i]; ++i) {
     if (string[i] == ' ')
       break;
     if (string[i] >= 48 && string[i] <= 57)
